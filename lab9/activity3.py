@@ -1,43 +1,27 @@
-def celsius_to_fahrenheit(celsius):
-    return (celsius * 9/5) + 32
-
-def celsius_to_kelvin(celsius):
-    return celsius + 273.15
-
-def fahrenheit_to_celsius(fahrenheit):
-    return (fahrenheit - 32) * 5/9
-
-def fahrenheit_to_kelvin(fahrenheit):
-    return (fahrenheit - 32) * 5/9 + 273.15
-
-def kelvin_to_celsius(kelvin):
-    return kelvin - 273.15
-
-def kelvin_to_fahrenheit(kelvin):
-    return (kelvin - 273.15) * 9/5 + 32
-
-def find_largest_number():
-    numbers = []
-    for i in range(5):
-        num = float(input(f"Enter number {i+1}: "))
-        numbers.append(num)
-    print(f"The largest number is: {max(numbers)}")
-
-def main():
-    print("Temperature Converter: Celsius, Fahrenheit, Kelvin")
-    temp = float(input("Enter the temperature value: "))
-    unit = input("Enter the unit (C/F/K): ").strip().upper()
+def find_largest():
+    # Prompt the user to enter five numbers
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+    num3 = float(input("Enter the third number: "))
+    num4 = float(input("Enter the fourth number: "))
+    num5 = float(input("Enter the fifth number: "))
     
-    if unit == 'C':
-        print(f"{temp}°C is {celsius_to_fahrenheit(temp):.2f}°F and {celsius_to_kelvin(temp):.2f}K")
-    elif unit == 'F':
-        print(f"{temp}°F is {fahrenheit_to_celsius(temp):.2f}°C and {fahrenheit_to_kelvin(temp):.2f}K")
-    elif unit == 'K':
-        print(f"{temp}K is {kelvin_to_celsius(temp):.2f}°C and {kelvin_to_fahrenheit(temp):.2f}°F")
+    # Determine the largest number using if statements
+    if num1 >= num2 and num1 >= num3 and num1 >= num4 and num1 >= num5:
+        largest = num1
+    elif num2 >= num1 and num2 >= num3 and num2 >= num4 and num2 >= num5:
+        largest = num2
+    elif num3 >= num1 and num3 >= num2 and num3 >= num4 and num3 >= num5:
+        largest = num3
+    elif num4 >= num1 and num4 >= num2 and num4 >= num3 and num4 >= num5:
+        largest = num4
     else:
-        print("Invalid unit! Please enter C, F, or K.")
+        largest = num5
     
-    find_largest_number()
+    # Display the result
+    print(f"The largest number is: {largest}")
 
-if __name__ == "__main__":
-    main()
+# Run the function
+find_largest()
+
+    
